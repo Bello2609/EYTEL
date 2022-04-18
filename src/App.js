@@ -1,24 +1,24 @@
-import logo from './logo.svg';
+import Home from './Component/Home/Home';
+import Customers from "./Component/Customers/Customers";
+import ContactUS from "./Component/ContactUs/ContactUs";
+import AboutUs from "./Component/AboutUs/AboutUs";
+import Security from "./Component/Security/Security";
+import Error from './Component/Error/Error';
+import {Routes, Route} from "react-router-dom";
 import './App.css';
 
-function App() {
+const App = ()=> {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <div className="App">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/customer" element={<Customers />} />
+          <Route path="/contactus" element={<ContactUS />} />
+          <Route path="/aboutus" element={<AboutUs />} />
+          <Route path="/security" element={<Security />} />
+          <Route path="*" element={<Error />}/>
+        </Routes>
+      </div>
   );
 }
 
